@@ -1,173 +1,122 @@
 <!DOCTYPE html>
 <html>
-
+<!-- This is a comment in HTML -->
 
 <head>
-  <meta charset=utf-8 />
-  <title>MAP 671 - 201: Chikungunya Cases in Central America by Country (2021-2022)</title>
+	<meta charset=utf-8 />
+	<!-- Below is the title of the document -->
+	<title>Welcome to the my MAP 671-201 Final Project!</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
-  <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <style>
-    /* The map element */
-    #map {
-      width: 100%;
-      height: 8000px;
-    }
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
-    /* Add HTML element styles */
+	<style>
+		/* This is a comment in CSS. Below are the document styles. */
+		/* Hexadecimal values for UKy Colors: 
+            #c7c9c8 light gray 
+            #63666a dark gray
+            #15397f dark blue
+            #009bda light blue
+            #0033a0 official blue
+        */
+		body {
+			margin: 0;
+			padding: 0;
+			background: #ffffff;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			color: #3d3d3d;
+		}
 
-    body {
-      width: 80%;
-      margin: 10px auto;
-      padding: 0;
-      background: #FFFFFF;
-      font-family: 'PT Sans', Sans-serif;
-      font-weight: 300;
-      color: "black";
-      font-size: 100%;
-    }
+		section {
+			width: 960px;
+			/* width: 80%; */
+			margin: 20px auto;
+		}
 
-    /* Change opacity on hover over the icon class */
+		h1 {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 300;
+			/* The em unit. 2.5x the current size */
+			font-size: 2.5em;
+			letter-spacing: .04em;
+			text-transform: uppercase;
+		}
 
-    .icon:hover {
-      opacity: .8;
-    }
+		h2 {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 700;
+			color: gray;
+			font-size: 1.1em;
+			letter-spacing: .04em;
+		}
 
-    /* Modify Leaflet's default popup style */
+		p {
+			font-size: 1em;
+			line-height: 1.5em;
+		}
 
-    .leaflet-popup-content h3 {
-      font-family: "PT Sans", serif;
-      font-size: 1.3em;
-      margin-bottom: 6px;
-    }
+		a {
+			color: #005daa;
+			text-decoration: none;
+		}
 
-    .leaflet-popup-content p {
-      margin: 3px 0 6px;
-      font-size: 1.1em;
-    }
+		a:hover {
+			text-decoration: underline;
+		}
 
-    .leaflet-popup-content a {
-      font-weight: normal;
-    }
+		ul {
+			padding-left: 20px;
+		}
 
-    img.ladybeetle {
-      height: 25%;
-      width: 25%;
-    }
+		li {
+			margin: 10px 0
+		}
 
-    th {
-      text-align: center;
-    }
+		#map {
+			width: 100%;
+			margin: 0px auto;
+		}
 
-    td {
-      text-align: center;
-    }
-  </style>
-  <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+		.max-width-img {
+			width: 100%;
+		}
 
+		/* Add custom style class here */
+	</style>
 </head>
 
 <body>
+	<section>
+		<!-- The division element contains an image element -->
+		<div id='map'>
+			<!-- The image element uses the the 'src' property to show an image on the page. -->
+			<img src="https://github.com/HNRussell/Honduras-Diseases/blob/main/Chikungunya%20in%20Central%20America%202021-2022_1200dpi.png" class="max-width-img" alt="This map displays the selected area of interest from OpenStreetMap">
+		</div>
+		<!-- <a href="">Link to high resolution version</a> -->
 
-  <header>
-    <h1>Welcome to the my MAP 671-201 Final Project!</h1>
-  </header>
+		<!-- This is an HTML comment. Find the comments below and follow the instructions. -->
 
-  <section>
-    <div id='map'></div>
-  </section>
+		<h1>Chikungunya Case Number in Central America by Country (2021-2022)</h1>
 
-  <br><br>
-  <hr>
-  <h2>Source Information:</h2>
-  <p>This map was created by Heather Russell in the MAP 671 Fall 2022 course.
-  </p>
+		<!-- Add you information below -->
+		<h2>Authored by: Heather Russell</h2>
+		<p>My final map submission includes a static, choropleth map (as image in PNG format) utilizing QGIS 3.26.3 (EPSG: 4326, scale 1:14741071, coordinates: 8.39, -89.91). Legend includes country outlines, oceans, and Chikungunya incidence numbers collected from PAHO and WHO. Datasets and layer files were dervied from the sources listed below from January 2021 through November 2022: World and Country Data: http://www.naturalearthdata.com/downloads/10m-physical-vectors/ & https://www.naturalearthdata.com/downloads/10m-cultural-vectors/. Disease and Vector Data (CSV): https://www3.paho.org/data/index.php/en/mnu-topics/chikv-en.html.   
+			
+			<a href="https://github.com/HNRussell/Honduras-Diseases" target="blank">website</a>. </p>
 
-  <script>
-
-    // Map options control initial location and zoom level.
-    var options = {
-      center: [0, 0],
-      zoom: 2,
-      minZoom: 2,
-      maxZoom: 15,
-      zoomControl: true
-    }
-
-    // Create Leaflet map with above options.
-    var map = L.map('map', options);
-    // Get basemap URL from Leaflet Providers
-    var basemap_url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
-
-    // http://leaflet-extras.github.io/leaflet-providers/preview/index.html
-    // Get basemap attributes from Leaflet Providers for the specific map used
-    var basemap_attributes = {
-      maxZoom: 18,
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-    };
-    // requests some map tiles
-    var tiles = L.tileLayer(basemap_url, basemap_attributes);
-
-    map.addLayer(tiles);
-
-
-    var samplepoints = [
-      {
-        name: "Heather Russell",
-        properties: {
-          description: "Chikungunya Case Number in Central America by Country (2021-2022)",
-          coordinates: [8.39, -89.91],
-          topic: "Entomology, Biology, Ecology, Environmental Science, Public Health"
-          link to my GitHub repository: "https://github.com/HNRussell/Honduras-Diseases"
-          1200dpi map link: "https://github.com/HNRussell/Honduras-Diseases/blob/main/Chikungunya%20in%20Central%20America%202021-2022_1200dpi.png"
-          8000dpi map link: "https://github.com/HNRussell/Honduras-Diseases/blob/main/Chikungunya%20in%20Central%20America%202021-2022_8000dpi.png"
-        }
-      }
-      //,
-
-    ];
-
-    // Create empty latLng bounds for zooming/centering map dynamically
-    var bounds = L.latLngBounds();
-
-    // Create all sample points
-    for (var i = 0; i < samplepoints.length; i++) {
-      var props = samplepoints[i].properties;
-      var popup = `<h3>${samplepoints[i].name}</h3>
-            <p><b>Topic</b>:<br>${props.topic}</p>
-            <p><b>Short description</b>:<br><i>${props.description}</i></p>`
-      //Create the icon 
-      var icon = L.icon({
-        iconUrl: props.icon,
-        iconSize: [40, 40],
-        popupAnchor: [0, -22],
-        className: "icon"
-      });
-
-      var marker = L.marker(samplepoints[i].properties.coordinates, {
-      })
-        .addTo(map)
-        .bindPopup(popup);
-
-      //  Extend the bounds as features are added
-      bounds.extend(samplepoints[i].properties.coordinates)
-
-
-      marker.on("mouseover", function () {
-        this.openPopup();
-      });
-      // marker.on("mouseout", function() {
-      //   this.closePopup();
-      // });
-    }
-
-// If you disable the mouseout, the popup will linger until mousing/clicking over another marker
-
-  </script>
+		<ul>
+			<!-- Change the following contacts to your personal brand, whatever you want it to be! -->
+			<li>See my projects on GitHub: <a href="https://github.com/HNRussell/">New Maps Plus</a></li>
+		</ul>
+		<hr>
+		<a href="https://uky-gis.github.io"><img width="20%"
+				src="https://uky-gis.github.io/graphics/logo-color-400px.png"
+				alt="University of Kentucky Geography"></a>
+		<a href="https://newmapsplus.as.uky.edu"><img width="15%"
+				src="https://newmapsplus.as.uky.edu/sites/default/files/NMP%20Logo.png" alt="New Maps Plus"></a>
+	</section>
 </body>
 
 </html>
