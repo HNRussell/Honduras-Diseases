@@ -11,6 +11,7 @@ Chikungunya is spread by mosquito species such as Aedes aegypti and Aedes albopi
 My final map submission includes a static, choropleth map (as image in PNG format) utilizing QGIS 3.26.3 (EPSG: 4326, scale 1:14741071). Legend includes country outlines, oceans, and Chikungunya incidence numbers collected from PAHO and WHO. 
 
 https://github.com/HNRussell/Honduras-Diseases/blob/main/Chikungunya%20in%20Central%20America%202021-2022_1200dpi.png 
+
 https://github.com/HNRussell/Honduras-Diseases/blob/main/Chikungunya%20in%20Central%20America%202021-2022_8000dpi.png 
 
 Datasets and layer files were dervied from the sources listed below from January 2021 through November 2022: 
