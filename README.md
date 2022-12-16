@@ -20,7 +20,7 @@ https://github.com/HNRussell/Honduras-Diseases/blob/main/Chikungunya%20in%20Cent
 
 ## Data Sources
 
-Datasets and layer files were dervied from the sources listed below from January 2021 through November 2022: 
+Datasets and layer files were derived from the sources listed below from January 2021 through November 2022: 
 
 World and Country Data: http://www.naturalearthdata.com/downloads/10m-physical-vectors/ & https://www.naturalearthdata.com/downloads/10m-cultural-vectors/
 
