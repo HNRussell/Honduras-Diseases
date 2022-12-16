@@ -28,7 +28,7 @@ Disease and Vector Data (CSV): https://www3.paho.org/data/index.php/en/mnu-topic
 
 ## Conclusion
 
-The map indicates low incidence rates (less than 50) in all countries except Guatemala and El Salvador. The reason for this is not known, but poverty and lack of education in those areas could be contributing factors. During the research and mapping process, I had originally planned to look into several diseases endemic to Central America or one specific country (down to the province) to discover which was most prevalent in each country, but discovered a lack a of datasets (current or altogether) to be used. This is something that during future missions I hope to change!
+The map indicates low incidence rates (less than 50) in all countries except Guatemala and El Salvador. The reason for this is not known, but poverty and lack of education in those areas could be contributing factors. During the research and mapping process, I had originally planned to look into several diseases endemic to Central America or one specific country (down to the province) to discover which was most prevalent in each country but discovered a lack a of datasets (current or altogether) to be used. This is something that during future missions I hope to change!
 
 https://github.com/HNRussell/Honduras-Diseases/blob/main/index.html
 
